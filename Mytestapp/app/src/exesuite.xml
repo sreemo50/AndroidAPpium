@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="TestAll">
+
+   <!-- <test name="order">
+        <parameter name="versn" value="7.0"/>
+        <parameter name="appPack" value="com.flipkart.android"/>
+        <parameter name="appAct" value="com.flipkart.android.SplashActivity"/>
+        <parameter name="appUrl" value="http://127.0.0.1:4723/wd/hub"/>
+        <classes>
+            <class name="com.example.sreekuttyomanakuttan.myapplication.TestNGSmapleTestCase" >
+                <methods>
+                    <include name="setup" />
+                </methods>
+            </class>
+        </classes>
+    </test>-->
+
+    <test name="orderTesting">
+        <!--<parameter name="versn" value="5.1.1"/>
+        <parameter name="appPack" value="com.flipkart.android"/>
+        <parameter name="appAct" value="com.flipkart.android.SplashActivity"/>
+        <parameter name="appUrl" value="http://127.0.0.1:4724/wd/hub"/>-->
+        <classes>
+            <class name="com.example.sreekuttyomanakuttan.mytestapp.ExampleUnitTest" >
+              <methods>
+                    <include name="testingFirstTest" />
+
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
