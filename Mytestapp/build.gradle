@@ -11,13 +11,17 @@ buildscript {
         // in the individual module build.gradle files
     }
 }
-
+/*
+test {
+    useTestNG {
+        suites 'src/exesuite.xml'
+    }
+}*/
 allprojects {
     repositories {
         jcenter()
     }
 }
-
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
