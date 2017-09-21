@@ -15,17 +15,36 @@
             </class>
         </classes>
     </test>-->
-
+<!--
     <test name="orderTesting">
-        <!--<parameter name="versn" value="5.1.1"/>
-        <parameter name="appPack" value="com.flipkart.android"/>
-        <parameter name="appAct" value="com.flipkart.android.SplashActivity"/>
-        <parameter name="appUrl" value="http://127.0.0.1:4724/wd/hub"/>-->
+        <parameter name="Platform" value="Android"/>
+        <parameter name="PlatformVersion" value="5.1.1"/>
+        <parameter name="devicedet" value="Galaxy Grand Prime"/>
+        <parameter name="apiKey" value="4200834a9bea8200"/>
+        <parameter name="appPack" value="in.amazon.mShop.android.shopping"/>
+        <parameter name="appAct" value="com.amazon.mShop.splashscreen.StartupActivity"/>
+        <parameter name="appUrl" value="http://127.0.0.1:4721/wd/hub"/>
         <classes>
             <class name="com.example.sreekuttyomanakuttan.mytestapp.ExampleUnitTest" >
               <methods>
                     <include name="testingFirstTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>-->
 
+    <test name="orderTesting">
+        <parameter name="Platform" value="Android"/>
+        <parameter name="PlatformVersion" value="5.1.1"/>
+        <parameter name="devicedet" value="Galaxy Grand Prime"/>
+        <parameter name="apiKey" value="4200834a9bea8200"/>
+        <parameter name="appPack" value="in.amazon.mShop.android.shopping"/>
+        <parameter name="appAct" value="com.amazon.mShop.splashscreen.StartupActivity"/>
+        <parameter name="appUrl" value="http://127.0.0.1:4721/wd/hub"/>
+        <classes>
+            <class name="com.example.sreekuttyomanakuttan.mytestapp.tests.HomeTest" >
+                <methods>
+                    <include name="CheckForProduct" />
                 </methods>
             </class>
         </classes>

@@ -147,5 +147,9 @@ dependencies {
     compile files('libs/httpclient-4.4.1.jar')
     compile files('libs/httpcore-4.4.1.jar')
     compile files('libs/httpmime-4.4.1.jar')
+    compile files('libs/testobject-appium-java-api-0.0.17.jar')
+    //compile files('libs/testobject-appium-java-api-0.0.26.jar')
+    //compile files('libs/testobject-appium-java-api-0.0.21.jar')
+    compile files('libs/testobject-java-api-0.0.19.jar')
 }
 
