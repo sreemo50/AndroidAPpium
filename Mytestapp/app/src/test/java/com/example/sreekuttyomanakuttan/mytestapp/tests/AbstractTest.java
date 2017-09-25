@@ -28,12 +28,13 @@ public abstract class AbstractTest  {
   // public TestObjectTestNGTestResultWatcher resultWatcher=new TestObjectTestNGTestResultWatcher();
 
 
-    private AppiumDriver appiumDriver;
+    //private AppiumDriver appiumDriver;
+    protected AppiumDriver appiumDriver;
     protected AmazonApp amzonapp;
     public Device device;
     private String appiumPath="C:\\Program Files (x86)\\Appium";
-
-    /*@BeforeSuite
+/*
+    @BeforeSuite
     public void StartAppiumServer() throws IOException, InterruptedException {
         CommandLine cmdline=new CommandLine("cmd");
         cmdline.addArgument("/c");
@@ -53,8 +54,8 @@ public abstract class AbstractTest  {
         executer.setExitValue(1);
         executer.execute(cmdline,resultHandler);
         Thread.sleep(5000);
-    }*/
-
+    }
+*/
     @Parameters({"Platform","PlatformVersion","devicedet","apiKey", "appPack","appAct","appUrl"})
     @BeforeTest
     public void ConnectToDevice(String Platform,String PlatformVersion,String devicedet,String apiKey,String appPack,String appAct,String appUrl) throws Exception //Device testDevice

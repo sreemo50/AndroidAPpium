@@ -22,9 +22,10 @@ public class ProductTest extends AbstractTest {
 
 
     @Test
-    public Boolean CheckForProductPresent()
+    public void CheckForProductPresent()
     {
-      return amzonapp.ProductScreen().ProductPresentChek();
+      amzonapp.ProductScreen().SelectTheProduct();
+      //return amzonapp.ProductScreen().ProductPresentChek();
 
     }
 

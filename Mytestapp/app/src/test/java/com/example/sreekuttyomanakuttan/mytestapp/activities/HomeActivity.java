@@ -29,17 +29,10 @@ public class HomeActivity extends AbstractActivity{
 
 
 
+    public HeaddertActivity HedderareaPropertyt;
     //@FindBy(how= How.XPATH,using="android.widget.ImageView[@content-desc='Navigation panel, button, double tap to open side panel']")
     //@AndroidFindBy(xpath = "android.widget.ImageView[@content-desc='Navigation panel, button, double tap to open side panel']")
 
-    //@FindBy(how= How.ID,using="in.amazon.mShop.android.shopping:id/action_bar_burger_icon")
-    //@AndroidFindBy(id = "in.amazon.mShop.android.shopping:id/action_bar_burger_icon")
-    @AndroidFindBy(xpath = "android.widget.ImageView")
-    public WebElement CategoryMenu;
-
-    @FindBy(how= How.XPATH,using="//android.widget.ImageView[@content-desc='Cart']")
-    @AndroidFindBy(xpath = "//android.widget.ImageView[@content-desc='Cart']")
-    public WebElement addToCart_btn;
 
     @FindBy(how= How.XPATH,using="//android.widget.TextView[@text='Shop by\n"    +
             "Category']")
@@ -47,8 +40,10 @@ public class HomeActivity extends AbstractActivity{
             "Category']")
     public WebElement shopByCategory_btn;
 
-    @FindBy(how= How.XPATH,using="//android.widget.EditText[@text='What are you looking for?']")
-    @AndroidFindBy(xpath = "//android.widget.EditText[@text='What are you looking for?']")
+    //@FindBy(how= How.XPATH,using="//android.widget.EditText[@text='What are you looking for?']")
+    //@AndroidFindBy(xpath = "//android.widget.EditText[@text='What are you looking for?']")
+    //@AndroidFindBy(id = "in.amazon.mShop.android.shopping:id/rs_search_src_text")
+    @FindBy(how= How.ID,using="in.amazon.mShop.android.shopping:id/rs_search_src_text")
     public WebElement productSearch_txtbx;
 
     @FindBy(how= How.XPATH,using="android.view.View[Contains(@resource-id,'gw-mobile-greeting-bar')]")
@@ -56,32 +51,37 @@ public class HomeActivity extends AbstractActivity{
     public WebElement your_Account_lnk;
 
 
-    public void tapOn_your_Account_lnk()
+
+
+    public  String GetyHomeActivityTitle()
     {
-        your_Account_lnk.click();
+        String title=driver.getTitle();
+        return title;
     }
-    public void tapOn_shopByCategory_btn()
+
+    public Boolean  VarifyHomeActivity()
     {
-        shopByCategory_btn.click();
+        String homeActName="AMAZON";
+        return GetyHomeActivityTitle().contains(homeActName);
     }
-    public void tapOn_productSearch_txtbx()
+
+
+
+    public void  ClickOnShopByCategory()
+    {
+        //click on shop by category button and returns to the category list;
+    }
+
+
+    public ProductActivity TypeProductname(String productName)
     {
         productSearch_txtbx.click();
-    }
-    public void tapOn_addToCart_btn()
-    {
-        addToCart_btn.click();
-    }
-
-
-
-
-    public void CheckForTheProduct(String productName)
-    {
-        tapOn_productSearch_txtbx();
         productSearch_txtbx.sendKeys(productName+"\n");
-
+        return new ProductActivity(driver);
     }
 
 
+    public AccountDetailsActivity ClickOnAccountDetails() {
+        return new AccountDetailsActivity(driver);
+    }
 }

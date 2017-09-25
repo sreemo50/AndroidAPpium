@@ -3,6 +3,8 @@ package com.example.sreekuttyomanakuttan.mytestapp.Util;
 import com.example.sreekuttyomanakuttan.mytestapp.activities.HomeActivity;
 import com.example.sreekuttyomanakuttan.mytestapp.activities.ProductActivity;
 
+import java.util.concurrent.TimeUnit;
+
 import io.appium.java_client.AppiumDriver;
 
 /**
@@ -19,6 +21,7 @@ public class AmazonApp {
 
     public HomeActivity HomeScreen()
     {
+        driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
         return new HomeActivity(driver);
 
     }
