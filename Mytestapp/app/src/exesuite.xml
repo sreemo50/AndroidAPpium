@@ -42,11 +42,8 @@
         <parameter name="appAct" value="com.amazon.mShop.splashscreen.StartupActivity"/>
         <parameter name="appUrl" value="http://127.0.0.1:4721/wd/hub"/>
         <classes>
-            <class name="com.example.sreekuttyomanakuttan.mytestapp.tests.HomeTest" >
-                <methods>
-                    <include name="CheckForProduct" />
-                </methods>
-            </class>
+            <class name="com.example.sreekuttyomanakuttan.mytestapp.tests.HomeTest" />
+
         </classes>
     </test>
 </suite>
