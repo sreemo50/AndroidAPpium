@@ -40,7 +40,7 @@
         <parameter name="apiKey" value="4200834a9bea8200"/>
         <parameter name="appPack" value="in.amazon.mShop.android.shopping"/>
         <parameter name="appAct" value="com.amazon.mShop.splashscreen.StartupActivity"/>
-        <parameter name="appUrl" value="http://127.0.0.1:4721/wd/hub"/>
+        <parameter name="appUrl" value="http://127.0.0.1:4723/wd/hub"/>
         <classes>
             <class name="com.example.sreekuttyomanakuttan.mytestapp.tests.HomeTest" />
 

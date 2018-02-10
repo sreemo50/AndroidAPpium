@@ -4,6 +4,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 
+import java.util.concurrent.TimeUnit;
+
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 
@@ -25,6 +27,7 @@ public class HomeActivity extends AbstractActivity{
    public  HomeActivity(AppiumDriver driver)
      {
          super(driver);
+         driver.manage().timeouts().implicitlyWait(500, TimeUnit.SECONDS);
      }
 
 
@@ -40,10 +43,10 @@ public class HomeActivity extends AbstractActivity{
             "Category']")
     public WebElement shopByCategory_btn;
 
-    //@FindBy(how= How.XPATH,using="//android.widget.EditText[@text='What are you looking for?']")
+    @FindBy(how= How.XPATH,using="//android.widget.EditText[@text='What are you looking for?']")
     //@AndroidFindBy(xpath = "//android.widget.EditText[@text='What are you looking for?']")
     //@AndroidFindBy(id = "in.amazon.mShop.android.shopping:id/rs_search_src_text")
-    @FindBy(how= How.ID,using="in.amazon.mShop.android.shopping:id/rs_search_src_text")
+    //@FindBy(how= How.ID,using="in.amazon.mShop.android.shopping:id/rs_search_src_text")
     public WebElement productSearch_txtbx;
 
     @FindBy(how= How.XPATH,using="android.view.View[Contains(@resource-id,'gw-mobile-greeting-bar')]")
@@ -55,13 +58,18 @@ public class HomeActivity extends AbstractActivity{
 
     public  String GetyHomeActivityTitle()
     {
+
+        System.out.println("GetyHomeActivityTitle");
+        driver.manage().timeouts().implicitlyWait(500, TimeUnit.SECONDS);
         String title=driver.getTitle();
+        System.out.println("VarifyHomeActivity"+""+title);
         return title;
     }
 
     public Boolean  VarifyHomeActivity()
     {
         String homeActName="AMAZON";
+        System.out.println("VarifyHomeActivity"+""+homeActName);
         return GetyHomeActivityTitle().contains(homeActName);
     }
 

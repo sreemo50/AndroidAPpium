@@ -14,6 +14,8 @@ import org.testng.remote.strprotocol.TestResultMessage;
  */
 
 public class MainListener implements ITestListener,IRemoteTestListener,ISuiteListener {
+    //private AppiumDriverLocalService service;
+   // private AppiumServiceBuilder buider;
     @Override
     public void onTestStart(ITestResult result) {
         System.out.println("I am in onTestStart "+ result.getTestName());
@@ -51,7 +53,14 @@ public class MainListener implements ITestListener,IRemoteTestListener,ISuiteLis
 
     @Override
     public void onStart(ISuite suite) {
+
         System.out.println("I am in suite onStart "+ suite.getName());
+      //  buider=new AppiumServiceBuilder();
+    //   buider.withIPAddress("127.0.0.1");
+       // buider.usingPort(4721);
+
+        //service= AppiumDriverLocalService.buildService(buider);
+       // service.start();
     }
 
     @Override

@@ -28,15 +28,18 @@ public abstract class AbstractTest  {
   // public TestObjectTestNGTestResultWatcher resultWatcher=new TestObjectTestNGTestResultWatcher();
 
 
+   // private AppiumDriverLocalService service;
+    //private AppiumServiceBuilder buider;
     //private AppiumDriver appiumDriver;
     protected AppiumDriver appiumDriver;
     protected AmazonApp amzonapp;
     public Device device;
     private String appiumPath="C:\\Program Files (x86)\\Appium";
-/*
-    @BeforeSuite
-    public void StartAppiumServer() throws IOException, InterruptedException {
-        CommandLine cmdline=new CommandLine("cmd");
+
+  //  @BeforeClass
+ //   public void StartAppiumServer() throws IOException, InterruptedException {
+       // System.out.println("hai i am in before class to start appium");
+     /*   CommandLine cmdline=new CommandLine("cmd");
         cmdline.addArgument("/c");
         cmdline.addArgument(appiumPath+"//node.exe");
         cmdline.addArgument(appiumPath+"//node_modules//appium//bin//appium.js");
@@ -54,8 +57,16 @@ public abstract class AbstractTest  {
         executer.setExitValue(1);
         executer.execute(cmdline,resultHandler);
         Thread.sleep(5000);
-    }
-*/
+        */
+
+       /* buider=new AppiumServiceBuilder();
+        buider.withIPAddress("127.0.0.1");
+        buider.usingPort(4721);
+
+        service=AppiumDriverLocalService.buildService(buider);
+        service.start();*/
+  //  }
+
     @Parameters({"Platform","PlatformVersion","devicedet","apiKey", "appPack","appAct","appUrl"})
     @BeforeTest
     public void ConnectToDevice(String Platform,String PlatformVersion,String devicedet,String apiKey,String appPack,String appAct,String appUrl) throws Exception //Device testDevice
@@ -72,7 +83,7 @@ public abstract class AbstractTest  {
 
         if(Platform.equals("Android")) {
             System.out.println("The values of platform"+Platform);
-            this.appiumDriver = AppiumDriverBuilder.forAndroid().withApiKey(apiKey).withEndpoint(new URL("http://127.0.0.1:4721/wd/hub")).withTestReport("123").withPlatform(Platform).withPlatformVersion(PlatformVersion).withappPack(appPack).withappAct(appAct).withappDevice(devicedet).build();
+            this.appiumDriver = AppiumDriverBuilder.forAndroid().withApiKey(apiKey).withEndpoint(new URL("http://127.0.0.1:4723/wd/hub")).withTestReport("123").withPlatform(Platform).withPlatformVersion(PlatformVersion).withappPack(appPack).withappAct(appAct).withappDevice(devicedet).build();
         }
         else if(Platform.equals("IOS")) {
             this.appiumDriver = AppiumDriverBuilder.forIOS().withApiKey(apiKey).withEndpoint(new URL("http://127.0.0.1:4721/wd/hub")).withTestReport("123").withPlatform(Platform).withPlatformVersion(PlatformVersion).withappPack(appPack).withappAct(appAct).withappDevice(devicedet).build();

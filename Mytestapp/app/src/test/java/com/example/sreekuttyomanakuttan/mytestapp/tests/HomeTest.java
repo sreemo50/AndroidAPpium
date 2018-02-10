@@ -28,11 +28,12 @@ public class HomeTest extends AbstractTest
   //      producttest=new ProductTest(this.driver);
 //
    // }
-    @Test
+    @Test(priority=1)
     public void VarifyHomeActivity() throws InterruptedException {
         //HomeActivity hact=new HomeActivity();
         System.out.println("Checking the activity is correct");
         HomeActivity hact=new HomeActivity(appiumDriver);
+        //driver.manage().timeouts().implicitlyWait(500, TimeUnit.SECONDS);
         Assert.assertTrue(hact.VarifyHomeActivity(),"Yes we are in home activity");
          }
 
@@ -44,7 +45,7 @@ public class HomeTest extends AbstractTest
         Assert.assertTrue(amzonapp.ProductScreen().productName_txt.isDisplayed(),"The checked is present");
         amzonapp.ProductScreen().SelectTheProduct();
     }*/
-    @Test
+    @Test(priority=0)
     public void CheckForProduct() throws InterruptedException {
         //HomeActivity hact=new HomeActivity();
         HomeActivity hact=new HomeActivity(appiumDriver);
@@ -52,7 +53,7 @@ public class HomeTest extends AbstractTest
         productAct.SelectTheProduct();
     }
 
-    @Test
+    @Test(priority=2)
     public void CheckForAccountDteails() throws InterruptedException {
         //HomeActivity hact=new HomeActivity();
         HomeActivity hact=new HomeActivity(appiumDriver);

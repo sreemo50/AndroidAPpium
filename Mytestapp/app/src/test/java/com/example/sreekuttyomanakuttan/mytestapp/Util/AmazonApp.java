@@ -21,7 +21,7 @@ public class AmazonApp {
 
     public HomeActivity HomeScreen()
     {
-        driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(500, TimeUnit.SECONDS);
         return new HomeActivity(driver);
 
     }

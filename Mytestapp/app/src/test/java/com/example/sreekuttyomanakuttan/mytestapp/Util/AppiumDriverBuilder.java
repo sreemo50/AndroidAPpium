@@ -1,5 +1,6 @@
 package com.example.sreekuttyomanakuttan.mytestapp.Util;
 
+import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testobject.appium.common.TestObjectCapabilities;
 
@@ -39,9 +40,10 @@ public abstract class AppiumDriverBuilder<SELF,DRIVER extends AppiumDriver>{
         DesiredCapabilities capabilities=new DesiredCapabilities();
         public AndroidDriver build()
         {
-            capabilities.setCapability(TestObjectCapabilities.TESTOBJECT_API_KEY,apiKey);
-            capabilities.setCapability(TestObjectCapabilities.TESTOBJECT_TEST_REPORT_ID,testreportid);
+            //capabilities.setCapability(TestObjectCapabilities.TESTOBJECT_API_KEY,apiKey);
+           //capabilities.setCapability(TestObjectCapabilities.TESTOBJECT_TEST_REPORT_ID,testreportid);
             capabilities.setCapability("deviceName", device);
+            capabilities.setCapability(CapabilityType.BROWSER_NAME, "Android");
             capabilities.setCapability("platformName", platform);
             capabilities.setCapability("platformVersion", platformVersion);
             capabilities.setCapability("appPackage", appPack);
