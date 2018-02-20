@@ -94,12 +94,13 @@ android {
     compileSdkVersion 25
     buildToolsVersion "25.0.2"
     defaultConfig {
-        applicationId "com.example.sreekuttyomanakuttan.automatedappium"
+        applicationId "com.example.sreekuttyomanakuttan.mytestapp"
         minSdkVersion 14
         targetSdkVersion 25
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        multiDexEnabled=true
     }
     packagingOptions {
         exclude 'MobMETA-INF/DEPENDENCIES'
@@ -136,7 +137,7 @@ dependencies {
     compile files('libs/guava-18.0.jar')
     compile files('libs/java-client-3.4.1.jar')
     compile files('libs/selenium-java-2.47.1.jar')
-    compile 'org.testng:testng:6.9.10'
+    //compile 'org.testng:testng:6.9.10'
     compile files('libs/commons-collections-3.2.1.jar')
     compile files('libs/commons-codec-1.10.jar')
     compile files('libs/commons-exec-1.3.jar')

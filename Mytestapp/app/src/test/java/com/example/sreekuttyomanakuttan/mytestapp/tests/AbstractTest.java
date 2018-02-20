@@ -86,7 +86,9 @@ public abstract class AbstractTest  {
             this.appiumDriver = AppiumDriverBuilder.forAndroid().withApiKey(apiKey).withEndpoint(new URL("http://127.0.0.1:4723/wd/hub")).withTestReport("123").withPlatform(Platform).withPlatformVersion(PlatformVersion).withappPack(appPack).withappAct(appAct).withappDevice(devicedet).build();
         }
         else if(Platform.equals("IOS")) {
+            System.out.println("We are in IOS");
             this.appiumDriver = AppiumDriverBuilder.forIOS().withApiKey(apiKey).withEndpoint(new URL("http://127.0.0.1:4721/wd/hub")).withTestReport("123").withPlatform(Platform).withPlatformVersion(PlatformVersion).withappPack(appPack).withappAct(appAct).withappDevice(devicedet).build();
+
         }
         else {
             throw new Exception("platfor different");
