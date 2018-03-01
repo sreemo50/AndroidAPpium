@@ -13,8 +13,12 @@ buildscript {
 }
 
 test {
+    print "Test"
     useTestNG {
-        if(project.hasProperty('FirstxmlSuite')){suites 'src/exesuite.xml'}
+        print "TestNG"
+        if(project.hasProperty('FirstxmlSuite')){
+            print "Hello World"
+            suites 'src/exesuite.xml'}
         if(project.hasProperty('secongxmlSuite')){}
     }
 }
