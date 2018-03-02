@@ -18,7 +18,7 @@ test {
         print "TestNG"
         if(project.hasProperty('FirstxmlSuite')){
             print "Hello World"
-            suites 'app/exesuite.xml'}
+            suites '//app/exesuite.xml'}
         if(project.hasProperty('secongxmlSuite')){}
     }
 }
