@@ -16,9 +16,12 @@ test {
     print "Test"
     useTestNG {
         print "TestNG"
+        useDefaultListeners = true
+        ignoreFailures = true
+        options.suites("app/exesuite.xml")
         //if(project.hasProperty('FirstxmlSuite')){
-            print "Hello World"
-            suites 'app/exesuite.xml'
+        //    print "Hello World"
+        //    suites 'app/exesuite.xml'
     //}
       //  if(project.hasProperty('secongxmlSuite')){}
     }
