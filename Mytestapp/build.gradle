@@ -14,11 +14,12 @@ buildscript {
 
 test {
     print "Test"
-    useTestNG {
+    useTestNG() {
         print "TestNG"
         useDefaultListeners = true
         ignoreFailures = true
         options.suites("app/exesuite.xml")
+        suiteName "TestAll"
         //if(project.hasProperty('FirstxmlSuite')){
         //    print "Hello World"
         //    suites 'app/exesuite.xml'
